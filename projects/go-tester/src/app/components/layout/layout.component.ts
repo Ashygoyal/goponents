@@ -3,6 +3,7 @@ import {
   NavGroup,
   NavItem,
   GoConfigService,
+  GoOffCanvasItem,
   GoToasterService,
   GoOffCanvasService,
   GoSideNavService,
@@ -73,12 +74,13 @@ export class LayoutComponent implements OnInit {
     this.goConfigService.setBrandColor('#8A4EDE');
   }
 
-  openOffCanvas(): void {
+  openOffCanvas(size: GoOffCanvasItem['size'] = 'small'): void {
     this.goOffCanvasService.openOffCanvas({
       component: OffCanvasTestComponent,
       bindings: {
       },
-      header: 'Test Header'
+      header: 'Test Header',
+      size
     });
   }
 
