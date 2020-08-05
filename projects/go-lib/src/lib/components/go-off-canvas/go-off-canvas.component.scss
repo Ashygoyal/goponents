@@ -1,13 +1,13 @@
-@import '../../../styles/variables';
-@import '../../../styles/mixins';
+@import "../../../styles/variables";
+@import "../../../styles/mixins";
 
 .go-off-canvas-backdrop {
-  background: rgba($base-dark, .5);
+  background: rgba($base-dark, 0.5);
   height: 100vh;
   left: 0;
   position: fixed;
   top: 0;
-  transition: opacity .5s cubic-bezier(.25, .8, .25, 1);
+  transition: opacity 0.5s cubic-bezier(0.25, 0.8, 0.25, 1);
   width: 100vw;
   z-index: z-index(off-canvas);
 }
@@ -25,6 +25,12 @@
   z-index: z-index(off-canvas);
 }
 
+.go-off-canvas.large {
+  width: 75vw;
+  background-color: $theme-light-bg;
+  color: $base-dark;
+}
+
 .go-off-canvas__header {
   align-self: flex-start;
   flex: 0 0 auto;
@@ -37,8 +43,12 @@
 
 .go-off-canvas__title {
   flex-grow: 1;
-  padding-right: .5rem;
+  padding-right: 0.5rem;
   color: $theme-dark-color;
+}
+
+.go-off-canvas__title.large {
+  color: $theme-light-color;
 }
 
 .go-off-canvas__button {
@@ -48,7 +58,7 @@
   cursor: pointer;
   display: block;
   font-family: $primary-font-stack;
-  font-size: .8rem;
+  font-size: 0.8rem;
   line-height: 1rem;
   outline-offset: -2px;
   padding: $column-gutter--half $column-gutter;
@@ -60,4 +70,8 @@
   flex: 1;
   overflow-y: auto;
   overflow-x: hidden;
+}
+
+.go-off-canvas__content.large {
+  background-color: $theme-light-app-bg;
 }
