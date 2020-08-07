@@ -3,14 +3,12 @@
 </header>
 
 <div class="go-container">
-  
   <go-card class="go-column go-column--100" id="usage">
     <ng-container go-card-header>
       <h2 class="go-heading-2 go-heading--no-wrap">Usage</h2>
       <go-copy cardId="usage" goCopyCardLink></go-copy>
     </ng-container>
     <div class="go-container" go-card-content>
-
       <div class="go-column go-column--100">
         <p class="go-body-copy go-body-copy--no-margin">
           The <code class="code-block--inline">&lt;go-off-canvas&gt;</code>
@@ -21,70 +19,78 @@
       <div class="go-column go-column--100 go-column--no-padding">
         <h3 class="go-heading-3">Setup</h3>
         <p class="go-body-copy">
-          To use the off canvas anywhere in the app, you must first add
-          it to the app level. This should only be done once per application.
+          To use the off canvas anywhere in the app, you must first add it to
+          the app level. This should only be done once per application.
         </p>
         <ol class="go-list go-list--ordered">
           <li>
             <p class="go-body-copy">
-              Import the <code class="code-block--inline">GoOffCanvasModule</code>
+              Import the
+              <code class="code-block--inline">GoOffCanvasModule</code>
               into the main app module.
             </p>
             <code [highlight]="appModuleImport"></code>
           </li>
           <li>
             <p class="go-body-copy">
-              Add the <code class="code-block--inline">&lt;go-off-canvas&gt;</code>
-              element to <code class="code-block--inline">app.component.html</code>.
+              Add the
+              <code class="code-block--inline">&lt;go-off-canvas&gt;</code>
+              element to
+              <code class="code-block--inline">app.component.html</code>.
             </p>
           </li>
         </ol>
       </div>
-
     </div>
   </go-card>
 
   <go-toast
     class="go-column go-column--100"
     header="Note!"
-    [message]="noteMessage">
+    [message]="noteMessage"
+  >
   </go-toast>
 
   <go-card class="go-column go-column--100" id="service">
     <ng-container go-card-header>
-      <h2 class="go-heading-2 go-heading--no-wrap">Using the Off Canvas service</h2>
+      <h2 class="go-heading-2 go-heading--no-wrap">
+        Using the Off Canvas service
+      </h2>
       <go-copy cardId="service" goCopyCardLink></go-copy>
     </ng-container>
     <div class="go-container" go-card-content>
-
       <div class="go-column go-column--100 go-column--no-padding">
-        <p class="go-body-copy">To make use of the off canvas in our component:</p>
+        <p class="go-body-copy">
+          To make use of the off canvas in our component:
+        </p>
         <ol class="go-list go-list--ordered">
           <li>
             <p class="go-body-copy">
               In the module that imports your component, import the
-              <code class="code-block--inline">GoOffCanvasModule</code>,
-              add the component that will be rendered in the off canvas to
-              the <code class="code-block--inline">entryComponents</code>,
-              and add the <code class="code-block--inline">GoOffCanvasService</code>
+              <code class="code-block--inline">GoOffCanvasModule</code>, add the
+              component that will be rendered in the off canvas to the
+              <code class="code-block--inline">entryComponents</code>, and add
+              the <code class="code-block--inline">GoOffCanvasService</code>
               to the providers.
             </p>
             <code [highlight]="uiKitExample"></code>
           </li>
           <li>
             <p class="go-body-copy">
-              In the component that is telling the off canvas to open, import the
-              <code class="code-block--inline">GoOffCanvasService</code>, and the
-              component that is being rendered inside the off canvas.
+              In the component that is telling the off canvas to open, import
+              the
+              <code class="code-block--inline">GoOffCanvasService</code>, and
+              the component that is being rendered inside the off canvas.
             </p>
             <code [highlight]="implementationExample"></code>
           </li>
           <li>
             <p class="go-body-copy">
               To open the off canvas, use the service to call
-              <code class="code-block--inline">openOffCanvas</code>.
-              This method takes the component type (BasicTestComponent in our case),
-              the bindings for that component as an object, and an optional header binding as a string.
+              <code class="code-block--inline">openOffCanvas</code>. This method
+              takes the component type (BasicTestComponent in our case), the
+              bindings for that component as an object, and an optional header
+              binding as a string.
             </p>
             <code [highlight]="functionExample"></code>
           </li>
@@ -92,8 +98,8 @@
             <div class="go-container">
               <div class="go-column go-column--100">
                 <p class="go-body-copy go-body-copy--no-margin">
-                  Lastly, we need something to trigger that function.
-                  In our case we will use a button that triggers the
+                  Lastly, we need something to trigger that function. In our
+                  case we will use a button that triggers the
                   <code class="code-block--inline">openOffCanvas</code> method,
                   but it could be triggered by any event.
                 </p>
@@ -107,7 +113,8 @@
                 <go-button
                   (handleClick)="openOffCanvas()"
                   buttonIcon="subdirectory_arrow_right"
-                  buttonVariant="neutral">
+                  buttonVariant="neutral"
+                >
                   Open Off Canvas
                 </go-button>
               </div>
@@ -115,7 +122,79 @@
           </li>
         </ol>
       </div>
+    </div>
+  </go-card>
 
+  <go-card class="go-column go-column--100" id="offCanvasLight">
+    <ng-container go-card-header>
+      <h2 class="go-heading-2 go-heading--no-wrap">
+        Using the Off Canvas Light
+      </h2>
+      <go-copy cardId="offCanvasLight" goCopyCardLink></go-copy>
+    </ng-container>
+    <div class="go-container" go-card-content>
+      <div class="go-column go-column--100 go-column--no-padding">
+        <p class="go-body-copy">
+          To make use of the light off canvas in our component:
+        </p>
+        <ol class="go-list go-list--ordered">
+          <!-- <li>
+            <p class="go-body-copy">
+              In the module that imports your component, import the
+              <code class="code-block--inline">GoOffCanvasModule</code>, add the
+              component that will be rendered in the off canvas to the
+              <code class="code-block--inline">entryComponents</code>, and add
+              the <code class="code-block--inline">GoOffCanvasService</code>
+              to the providers.
+            </p>
+            <code [highlight]="uiKitExample"></code>
+          </li> -->
+          <!-- <li>
+            <p class="go-body-copy">
+              In the component that is telling the off canvas to open, import
+              the
+              <code class="code-block--inline">GoOffCanvasService</code>, and
+              the component that is being rendered inside the off canvas.
+            </p>
+            <code [highlight]="implementationExample"></code>
+          </li> -->
+          <li>
+            <p class="go-body-copy">
+              Use the service to call
+              <code class="code-block--inline">openOffCanvas</code>. This method
+              takes the component type (BasicTestComponent in our case), the
+              bindings for that component as an object, an optional header
+              binding as a string and the optional size binding which must have a value: 
+              <code class="code-block--inline">large</code>. Since 'size' is an optional binding, 
+              if you dont use it, it takes <code class="code-block--inline">small</code> as the default value.
+            </p>
+            <code [highlight]="lightOffCanvasFunctionExample"></code>
+          </li>
+          <li>
+            <div class="go-container">
+              <div class="go-column go-column--100">
+                <p class="go-body-copy go-body-copy--no-margin">
+                  To trigger the function, follow the same steps as for the usual off canvas.
+                </p>
+              </div>
+              <div class="go-column go-column--50">
+                <h4 class="go-heading-4">component.html</h4>
+                <code [highlight]="lightOffCanvasHtmlExample"></code>
+              </div>
+              <div class="go-column go-column--50">
+                <h4 class="go-heading-4">View</h4>
+                <go-button
+                  (handleClick)="openOffCanvasLight()"
+                  buttonIcon="subdirectory_arrow_right"
+                  buttonVariant="neutral"
+                >
+                  Open Off Canvas Light
+                </go-button>
+              </div>
+            </div>
+          </li>
+        </ol>
+      </div>
     </div>
   </go-card>
 </div>

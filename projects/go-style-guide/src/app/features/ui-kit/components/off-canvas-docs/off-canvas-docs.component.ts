@@ -1,11 +1,11 @@
-import { Component } from '@angular/core';
-import { GoOffCanvasService } from '../../../../../../../go-lib/src/public_api';
+import { Component } from "@angular/core";
+import { GoOffCanvasService } from "../../../../../../../go-lib/src/public_api";
 
-import { BasicTestComponent } from '../basic-test/basic-test.component';
+import { BasicTestComponent } from "../basic-test/basic-test.component";
 
 @Component({
-  selector: 'app-off-canvas-docs',
-  templateUrl: './off-canvas-docs.component.html'
+  selector: "app-off-canvas-docs",
+  templateUrl: "./off-canvas-docs.component.html",
 })
 export class OffCanvasDocsComponent {
   noteMessage: string = `For this example, the component we want to render in the off canvas is "BasicTestComponent",
@@ -63,6 +63,19 @@ export class OffCanvasDocsComponent {
     });
   }
   `;
+  
+  lightOffCanvasFunctionExample: string = `
+  openOffCanvas() : void {
+    this.goOffCanvasService.openOffCanvas({
+      component: BasicTestComponent,
+      bindings: {
+        someBinding: 'monkey'
+      },
+      header: 'Test Header',
+      size: 'large'
+    });
+  }
+  `;
 
   htmlExample: string = `
   <go-button
@@ -73,17 +86,35 @@ export class OffCanvasDocsComponent {
   </go-button>
   `;
 
-  constructor(
-    private goOffCanvasService: GoOffCanvasService
-  ) { }
+  lightOffCanvasHtmlExample: string = `
+  <go-button
+    (handleClick)="openOffCanvas()"
+    buttonIcon="subdirectory_arrow_right"
+    buttonVariant="positive">
+    Open Off Canvas Light
+  </go-button>
+  `;
+
+  constructor(private goOffCanvasService: GoOffCanvasService) {}
 
   public openOffCanvas(): void {
     this.goOffCanvasService.openOffCanvas({
       component: BasicTestComponent,
       bindings: {
-        someBinding: 'Basic Off Canvas Component'
+        someBinding: "Basic Off Canvas Component",
       },
-      header: 'Test Header'
+      header: "Test Header",
+    });
+  }
+
+  public openOffCanvasLight(): void {
+    this.goOffCanvasService.openOffCanvas({
+      component: BasicTestComponent,
+      bindings: {
+        someBinding: "Basic Off Canvas Component",
+      },
+      header: "Test Header",
+      size: "large",
     });
   }
 }
