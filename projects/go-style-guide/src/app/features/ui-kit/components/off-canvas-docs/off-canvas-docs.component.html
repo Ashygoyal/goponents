@@ -163,9 +163,10 @@
               Use the service to call
               <code class="code-block--inline">openOffCanvas</code>. This method
               takes the component type (BasicTestComponent in our case), the
-              bindings for that component as an object, an optional header
-              binding as a string and the optional size binding which must have a value: 
-              <code class="code-block--inline">large</code>. Since 'size' is an optional binding, 
+              bindings for that component as an object, two optional bindings - header
+              binding as a string and size binding which can have either of the two values:<code class="code-block--inline">small</code> 
+               or <code class="code-block--inline">large</code>. You must use the <code class="code-block--inline">large</code> value for size binding, 
+               in order to get the lighter and wider version of off canvas. Since 'size' is an optional binding, 
               if you dont use it, it takes <code class="code-block--inline">small</code> as the default value.
             </p>
             <code [highlight]="lightOffCanvasFunctionExample"></code>
