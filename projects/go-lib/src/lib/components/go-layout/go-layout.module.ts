@@ -11,6 +11,7 @@ import { GoHeaderBarModule } from '../go-header-bar/go-header-bar.module';
 
 import { GoModalService } from '../go-modal/go-modal.service';
 import { GoOffCanvasService } from '../go-off-canvas/go-off-canvas.service';
+import { GoPortalService } from '../go-portal/go-portal.service';
 import { GoToasterService } from '../go-toaster/go-toaster.service';
 
 import { GoLayoutComponent } from './go-layout.component';
@@ -37,6 +38,7 @@ import { GoLayoutComponent } from './go-layout.component';
   providers: [
     GoModalService,
     GoOffCanvasService,
+    GoPortalService,
     GoToasterService
   ]
 })

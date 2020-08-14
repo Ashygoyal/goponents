@@ -16,9 +16,10 @@
     [ngClass]="{ large: size === 'large' }">
       {{ header }}
     </h3>
-    <go-icon-button buttonSize="medium" buttonIcon="close"
+    <go-icon-button *ngIf="size === 'small'" buttonSize="medium" buttonIcon="close"
                     (handleClick)="closeOffCanvas()">
     </go-icon-button>
+    <div *ngIf="size === 'large'" goPortalTarget="offCanvasHeader"></div>
   </div>
   <div class="go-off-canvas__content" [ngClass]="{ large: size === 'large' }">
     <ng-template go-off-canvas-host></ng-template>

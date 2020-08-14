@@ -39,6 +39,9 @@
   padding: $column-gutter;
   align-items: center;
   justify-content: flex-end;
+  display: flex;
+  // justify-content: space-between;
+  padding-bottom: 1rem;
 }
 
 .go-off-canvas__title {

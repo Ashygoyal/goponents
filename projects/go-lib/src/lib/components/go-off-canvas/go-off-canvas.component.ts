@@ -18,12 +18,13 @@ import { offCanvasAnimation } from '../../animations/off-canvas.animation';
   ]
 })
 export class GoOffCanvasComponent implements OnInit {
+  readonly defaultCanvasSize: 'large' | 'small' = 'small';
   currentOffCanvasItem: GoOffCanvasItem;
   opened: boolean = false;
   header: string;
 
   @ViewChild(GoOffCanvasDirective, { static: true }) goOffCanvasHost: GoOffCanvasDirective;
-  size: "large" | "small";
+  size: "large" | "small"  = this.defaultCanvasSize;
 
   constructor(
     private componentFactoryResolver: ComponentFactoryResolver,

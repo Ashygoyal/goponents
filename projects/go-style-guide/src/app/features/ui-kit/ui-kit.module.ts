@@ -25,6 +25,8 @@ import {
   GoOffCanvasModule,
   GoOffCanvasService,
   GoPillModule,
+  GoPortalModule,
+  GoPortalService,
   GoRadioModule,
   GoSelectComponent,
   GoSelectModule, GoSharedModule,
@@ -125,6 +127,7 @@ import { VirtualScrollComponent } from './components/virtual-scroll/virtual-scro
     GoModalModule,
     GoOffCanvasModule,
     GoPillModule,
+    GoPortalModule, 
     GoSwitchToggleModule,
     GoRadioModule,
     GoTableModule,
@@ -206,6 +209,7 @@ import { VirtualScrollComponent } from './components/virtual-scroll/virtual-scro
     GoConfigService,
     GoModalService,
     GoOffCanvasService,
+    GoPortalService,
     GoToasterService,
     TitleCasePipe
   ]

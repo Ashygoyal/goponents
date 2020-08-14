@@ -28,6 +28,9 @@ import { GoTextAreaModule } from './components/go-text-area/go-text-area.module'
 import { GoToastModule } from './components/go-toast/go-toast.module';
 import { GoToasterModule } from './components/go-toaster/go-toaster.module';
 import { GoCopyCardLinkModule } from './directives/go-copy-card-link/go-copy-card-link.module';
+import { GoPortalModule } from './components/go-portal/go-portal.module';
+import { GoPortalAttachToDirective } from './components/go-portal/go-portal-attach-to.directive';
+import { GoPortalTargetDirective } from './components/go-portal/go-portal-target.directive';
 
 @NgModule({
   imports: [
@@ -51,6 +54,7 @@ import { GoCopyCardLinkModule } from './directives/go-copy-card-link/go-copy-car
     GoLayoutModule,
     GoLoaderModule,
     GoModalModule,
+    GoPortalModule,
     GoRadioModule,
     GoSearchModule,
     GoSelectModule,
@@ -81,6 +85,7 @@ import { GoCopyCardLinkModule } from './directives/go-copy-card-link/go-copy-car
     GoLayoutModule,
     GoLoaderModule,
     GoModalModule,
+    GoPortalModule,
     GoRadioModule,
     GoSearchModule,
     GoSelectModule,
@@ -90,7 +95,8 @@ import { GoCopyCardLinkModule } from './directives/go-copy-card-link/go-copy-car
     GoTextAreaModule,
     GoToastModule,
     GoToasterModule
-  ]
+  ],
+  declarations: [ GoPortalAttachToDirective, GoPortalTargetDirective]
 })
 
 export class GoSharedModule { }
