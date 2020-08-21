@@ -1,5 +1,7 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { FormControl } from '@angular/forms';
+import { Subject, concat, of } from 'rxjs';
+import { debounceTime, map } from 'rxjs/operators';
 
 @Component({
   selector: 'off-canvas-test',
@@ -23,4 +25,22 @@ export class OffCanvasTestComponent {
     value: 5,
     name: 'Snake'
   }];
+
+  selectData2: any = [];
+
+  
+  // ngOnInit(){
+  //   this.selectControl.valueChanges.pipe(
+  //     debounceTime(600), // Delay user input
+  //     map((input) => [input])
+  //   )
+        
+  //       // this.selectData = concat(
+  //       //   of([]),
+  //       //   this.itemInput.pipe(
+  //       //     debounceTime(600), // Delay user input
+  //       //     map((input) => [input])
+  //       //   )
+  //       // );
+  //    }
 }

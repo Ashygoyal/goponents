@@ -1,4 +1,4 @@
-import { Component, ContentChild, Input, OnInit, TemplateRef, ViewEncapsulation } from '@angular/core';
+import { Component, ContentChild, Input, OnInit, TemplateRef, ViewEncapsulation, OnChanges, SimpleChanges } from '@angular/core';
 import { FormControl } from '@angular/forms';
 import { Subject } from 'rxjs';
 import { generateId } from '../../utilities/form.utils';
@@ -9,7 +9,7 @@ import { generateId } from '../../utilities/form.utils';
   templateUrl: './go-select.component.html',
   styleUrls: ['./go-select.component.scss']
 })
-export class GoSelectComponent implements OnInit {
+export class GoSelectComponent implements OnInit, OnChanges {
   id: string;
 
   @Input() appendTo: string;
@@ -38,9 +38,25 @@ export class GoSelectComponent implements OnInit {
   @ContentChild('goSelectOptionGroup', { static: false }) goSelectOptionGroup: TemplateRef<any>;
   @ContentChild('goSelectSelectedOption', { static: false }) goSelectSelectedOption: TemplateRef<any>;
 
+  ngOnChanges(changes:SimpleChanges) {
+    console.log(changes.typeahead)
+  }
+
   ngOnInit(): void {
     this.id = this.key || generateId(this.label, 'select');
+    // console.log(this.typeahead)
+    if(this.typeahead ){
+      alert('I caught ya!')
+      // this.control.valueChanges.subscribe(value => {
+      //   if (!value){
+      //     alert('I caught ya again!')
+      //   }
+      // })
+    }
   }
+
+  
+
 
   onSelectAll(): void {
     this.control.patchValue(this.items.map((item: any) => this.bindValue ? item[this.bindValue] : item));
