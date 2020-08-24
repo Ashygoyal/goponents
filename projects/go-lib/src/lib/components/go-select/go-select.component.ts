@@ -39,12 +39,12 @@ export class GoSelectComponent implements OnInit, OnChanges {
   @ContentChild('goSelectSelectedOption', { static: false }) goSelectSelectedOption: TemplateRef<any>;
 
   ngOnChanges(changes:SimpleChanges) {
-    console.log(changes.typeahead)
+    console.log('simple changes ',changes.typeahead)
   }
 
   ngOnInit(): void {
     this.id = this.key || generateId(this.label, 'select');
-    // console.log(this.typeahead)
+    console.log('value of typeahead',this.typeahead)
     if(this.typeahead ){
       alert('I caught ya!')
       // this.control.valueChanges.subscribe(value => {
