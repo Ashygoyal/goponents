@@ -140,8 +140,8 @@ $input--disabled-background: rgba($base-dark-secondary, .4);
 
 // When the checkbox is checked, change the background and border color of the custom checkbox
 .go-form__checkbox:checked ~ .go-form__custom-checkbox {
-  background-color: $ui-color-positive;
-  border-color: $ui-color-positive;
+  background-color: $ui-color-primary;
+  border-color: $ui-color-primary;
 }
 
 // When the checkbox is disabled, change the background color of the custom checkbox
